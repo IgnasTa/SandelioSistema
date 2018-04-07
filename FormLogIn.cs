@@ -25,36 +25,32 @@ namespace SandelioSistema
             }
             else
             {
-                var alevel = Int32.Parse(dtbl.Rows[0]["level"].ToString()); // authorization level
-                switch (alevel)
+                Cnst.alevel = Int32.Parse(dtbl.Rows[0]["level"].ToString()); // authorization level
+                switch (Cnst.alevel)
                 {
                     case 0:
-                        {
-                            var redirect = new FormMain0();
-                            Hide();
-                            redirect.Show();
-                            break;
-                        }
+                    {
+                        var redirect = new FormMain0();
+                        Hide();
+                        redirect.Show();
+                        break;
+                    }
 
                     case 1:
-                        {
-                            var redirect = new FormMain1();
-                            Hide();
-                            redirect.Show();
-                            break;
-                        }
+                    {
+                        var redirect = new FormMain1();
+                        Hide();
+                        redirect.Show();
+                        break;
+                    }
 
                     case 2:
-                        {
-                            var redirect = new FormMain2();
-                            Hide();
-                            redirect.Show();
-                            break;
-                        }
-
-                    default:
-                        MessageBox.Show("Check username and (or) password");
+                    {
+                        var redirect = new FormMain2();
+                        Hide();
+                        redirect.Show();
                         break;
+                    }
                 }
             }
         }
@@ -62,6 +58,20 @@ namespace SandelioSistema
         private void BtnSignIn_Click(object sender, EventArgs e)
         {
             var redirect = new FormSignIn();
+            Hide();
+            redirect.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var redirect = new FormSell();
+            Hide();
+            redirect.Show();
+        }
+
+        private void Storageredirect(object sender, EventArgs e)
+        {
+            var redirect = new FormStorage();
             Hide();
             redirect.Show();
         }

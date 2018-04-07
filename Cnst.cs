@@ -7,11 +7,13 @@ namespace SandelioSistema
 {
     class Cnst
     {
-        public static SqlConnection SqlCon = new SqlConnection(@"Server=tcp:dbignas.database.windows.net,1433;Initial Catalog=DB_Ignas;Persist Security Info=False;User ID=ignas;Password=Fred0123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        public static int alevel = 0;
+        
+        public static SqlConnection SqlCon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\Database SQL\SandelioDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         public static List<DropList> DropTipai = new List<DropList>
         {
-            new DropList() {Name = ""},
+            new DropList() {Name = " "},
             new DropList() {Name = "Maistas"},
             new DropList() {Name = "Chemija"},
             new DropList() {Name = "Elektronika"}

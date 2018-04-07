@@ -39,6 +39,8 @@
             this.dropTipas = new System.Windows.Forms.ComboBox();
             this.txtKiekis = new System.Windows.Forms.TextBox();
             this.txtKaina = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label5
@@ -55,15 +57,15 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 23;
-            this.button1.Text = "Vaziuojam";
+            this.button1.Text = "Suskaiciuoti";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.button1.Click += new System.EventHandler(this.BtnCalculate_Click);
             // 
             // comboBox2
             // 
             this.comboBox2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(163, 116);
+            this.comboBox2.Location = new System.Drawing.Point(142, 116);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(136, 21);
             this.comboBox2.TabIndex = 22;
@@ -106,10 +108,11 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(12, 76);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(163, 21);
+            this.comboBox1.Size = new System.Drawing.Size(341, 21);
             this.comboBox1.TabIndex = 20;
             // 
             // dropTipas
@@ -117,7 +120,7 @@
             this.dropTipas.FormattingEnabled = true;
             this.dropTipas.Location = new System.Drawing.Point(12, 36);
             this.dropTipas.Name = "dropTipas";
-            this.dropTipas.Size = new System.Drawing.Size(163, 21);
+            this.dropTipas.Size = new System.Drawing.Size(198, 21);
             this.dropTipas.TabIndex = 19;
             this.dropTipas.SelectedIndexChanged += new System.EventHandler(this.DropTipas_SelectedIndexChanged);
             // 
@@ -135,12 +138,34 @@
             this.txtKaina.Size = new System.Drawing.Size(102, 20);
             this.txtKaina.TabIndex = 24;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(110, 199);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "Uzsakyti";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(321, 249);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 23;
+            this.button3.Text = "Atgal";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Return_Click);
+            // 
             // FormSell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(499, 295);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label4);
@@ -153,6 +178,7 @@
             this.Controls.Add(this.txtKaina);
             this.Name = "FormSell";
             this.Text = "FormSell";
+            this.Load += new System.EventHandler(this.DropTipas_SelectedIndexChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,5 +197,7 @@
         private System.Windows.Forms.ComboBox dropTipas;
         private System.Windows.Forms.TextBox txtKiekis;
         private System.Windows.Forms.TextBox txtKaina;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

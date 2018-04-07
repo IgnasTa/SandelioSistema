@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[TblSellLog]
+﻿CREATE TABLE [dbo].[tblSellLog]
 (
 	[uzsakymoId] INT IDENTITY (1, 1) NOT NULL,
     [prekesId] INT NOT NULL, 
