@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStorage));
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtValueMax = new System.Windows.Forms.TextBox();
             this.txtValueMin = new System.Windows.Forms.TextBox();
             this.dropParameter = new System.Windows.Forms.ComboBox();
             this.gridStorage = new System.Windows.Forms.DataGridView();
-            this.btnValue = new System.Windows.Forms.Button();
-            this.btnDropList = new System.Windows.Forms.Button();
-            this.btnStorageParameter = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtStorageParameter = new System.Windows.Forms.TextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnValue = new System.Windows.Forms.Button();
+            this.btnDropList = new System.Windows.Forms.Button();
+            this.btnStorageParameter = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtStorageParameter = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridStorage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,14 +74,14 @@
             this.txtValueMax.Location = new System.Drawing.Point(104, 221);
             this.txtValueMax.Name = "txtValueMax";
             this.txtValueMax.Size = new System.Drawing.Size(75, 20);
-            this.txtValueMax.TabIndex = 19;
+            this.txtValueMax.TabIndex = 6;
             // 
             // txtValueMin
             // 
             this.txtValueMin.Location = new System.Drawing.Point(10, 221);
             this.txtValueMin.Name = "txtValueMin";
             this.txtValueMin.Size = new System.Drawing.Size(75, 20);
-            this.txtValueMin.TabIndex = 20;
+            this.txtValueMin.TabIndex = 5;
             // 
             // dropParameter
             // 
@@ -88,7 +89,7 @@
             this.dropParameter.Location = new System.Drawing.Point(10, 123);
             this.dropParameter.Name = "dropParameter";
             this.dropParameter.Size = new System.Drawing.Size(225, 21);
-            this.dropParameter.TabIndex = 18;
+            this.dropParameter.TabIndex = 3;
             // 
             // gridStorage
             // 
@@ -106,15 +107,15 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridStorage.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridStorage.DefaultCellStyle = dataGridViewCellStyle1;
             this.gridStorage.GridColor = System.Drawing.SystemColors.Control;
             this.gridStorage.Location = new System.Drawing.Point(241, -2);
             this.gridStorage.Name = "gridStorage";
@@ -123,51 +124,8 @@
             this.gridStorage.RowTemplate.Height = 25;
             this.gridStorage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridStorage.Size = new System.Drawing.Size(637, 371);
-            this.gridStorage.TabIndex = 17;
-            // 
-            // btnValue
-            // 
-            this.btnValue.Location = new System.Drawing.Point(10, 150);
-            this.btnValue.Name = "btnValue";
-            this.btnValue.Size = new System.Drawing.Size(75, 23);
-            this.btnValue.TabIndex = 14;
-            this.btnValue.Text = "Paieska";
-            this.btnValue.UseVisualStyleBackColor = true;
-            // 
-            // btnDropList
-            // 
-            this.btnDropList.Location = new System.Drawing.Point(10, 247);
-            this.btnDropList.Name = "btnDropList";
-            this.btnDropList.Size = new System.Drawing.Size(75, 23);
-            this.btnDropList.TabIndex = 15;
-            this.btnDropList.Text = "Paieska";
-            this.btnDropList.UseVisualStyleBackColor = true;
-            // 
-            // btnStorageParameter
-            // 
-            this.btnStorageParameter.Location = new System.Drawing.Point(7, 57);
-            this.btnStorageParameter.Name = "btnStorageParameter";
-            this.btnStorageParameter.Size = new System.Drawing.Size(75, 23);
-            this.btnStorageParameter.TabIndex = 16;
-            this.btnStorageParameter.Text = "Paieska";
-            this.btnStorageParameter.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.label1.Location = new System.Drawing.Point(7, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 16);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Iveskite pavadinima";
-            // 
-            // txtStorageParameter
-            // 
-            this.txtStorageParameter.Location = new System.Drawing.Point(7, 31);
-            this.txtStorageParameter.Name = "txtStorageParameter";
-            this.txtStorageParameter.Size = new System.Drawing.Size(225, 20);
-            this.txtStorageParameter.TabIndex = 12;
+            this.gridStorage.TabIndex = 0;
+            this.gridStorage.TabStop = false;
             // 
             // Column1
             // 
@@ -207,6 +165,53 @@
             this.Column5.ReadOnly = true;
             this.Column5.Width = 125;
             // 
+            // btnValue
+            // 
+            this.btnValue.Location = new System.Drawing.Point(10, 150);
+            this.btnValue.Name = "btnValue";
+            this.btnValue.Size = new System.Drawing.Size(75, 23);
+            this.btnValue.TabIndex = 4;
+            this.btnValue.Text = "Paieska";
+            this.btnValue.UseVisualStyleBackColor = true;
+            this.btnValue.Click += new System.EventHandler(this.btnDropList_Click);
+            // 
+            // btnDropList
+            // 
+            this.btnDropList.Location = new System.Drawing.Point(10, 247);
+            this.btnDropList.Name = "btnDropList";
+            this.btnDropList.Size = new System.Drawing.Size(75, 23);
+            this.btnDropList.TabIndex = 7;
+            this.btnDropList.Text = "Paieska";
+            this.btnDropList.UseVisualStyleBackColor = true;
+            this.btnDropList.Click += new System.EventHandler(this.btnValue_Click);
+            // 
+            // btnStorageParameter
+            // 
+            this.btnStorageParameter.Location = new System.Drawing.Point(7, 57);
+            this.btnStorageParameter.Name = "btnStorageParameter";
+            this.btnStorageParameter.Size = new System.Drawing.Size(75, 23);
+            this.btnStorageParameter.TabIndex = 2;
+            this.btnStorageParameter.Text = "Paieska";
+            this.btnStorageParameter.UseVisualStyleBackColor = true;
+            this.btnStorageParameter.Click += new System.EventHandler(this.StorageParameter_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.label1.Location = new System.Drawing.Point(7, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 16);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Iveskite pavadinima";
+            // 
+            // txtStorageParameter
+            // 
+            this.txtStorageParameter.Location = new System.Drawing.Point(7, 31);
+            this.txtStorageParameter.Name = "txtStorageParameter";
+            this.txtStorageParameter.Size = new System.Drawing.Size(225, 20);
+            this.txtStorageParameter.TabIndex = 1;
+            // 
             // FormStorage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,8 +229,10 @@
             this.Controls.Add(this.btnStorageParameter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtStorageParameter);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormStorage";
-            this.Text = "FormStorage";
+            this.Text = "Sandelio likuciai";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormStorage_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.gridStorage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

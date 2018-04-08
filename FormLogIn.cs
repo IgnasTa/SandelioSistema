@@ -75,5 +75,10 @@ namespace SandelioSistema
             Hide();
             redirect.Show();
         }
+
+        private void FormLogIn_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Cnst.ExitApp();
+        }
     }
 }

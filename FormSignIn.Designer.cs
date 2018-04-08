@@ -165,6 +165,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormSignIn";
             this.Text = "Uzsiregistruoti";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSignIn_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

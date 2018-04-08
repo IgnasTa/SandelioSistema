@@ -23,5 +23,17 @@ namespace SandelioSistema
             Hide();
             redirect.Show();
         }
+
+        private void FormMain0_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Cnst.ExitApp();
+        }
+
+        private void BtnStorage_Click(object sender, EventArgs e)
+        {
+            var redirect = new FormStorage();
+            Hide();
+            redirect.Show();
+        }
     }
 }

@@ -178,6 +178,7 @@
             this.Controls.Add(this.txtKaina);
             this.Name = "FormSell";
             this.Text = "FormSell";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSell_FormClosing);
             this.Load += new System.EventHandler(this.DropTipas_SelectedIndexChanged);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -141,5 +141,10 @@ namespace SandelioSistema
                 }
             }
         }
+
+        private void FormSell_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Cnst.ExitApp();
+        }
     }
 }

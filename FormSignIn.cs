@@ -47,5 +47,10 @@ namespace SandelioSistema
             else if (txtSignInPassword.Text.Trim() != txtPasswordRepeat.Text.Trim())
                 textBox1.Text = "Doesn't match";
         }
+
+        private void FormSignIn_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Cnst.ExitApp();
+        }
     }
 }

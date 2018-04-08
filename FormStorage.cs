@@ -25,6 +25,7 @@ namespace SandelioSistema
         //------------------------------------------------------------
         private void showData(string query, SqlConnection sqlcon)
         {
+            gridStorage.Rows.Clear();
             SqlDataAdapter data = new SqlDataAdapter(query, sqlcon);
             DataTable tableStorage = new DataTable();
             data.Fill(tableStorage);
@@ -58,20 +59,30 @@ namespace SandelioSistema
         //-----------------------------------------------------------
         private void btnValue_Click(object sender, EventArgs e)
         {
+            if (txtValueMin.TextLength > 0 && txtValueMax.TextLength > 0)
+            { 
+                int Min = Convert.ToInt32(txtValueMin.Text.Trim());
+                int Max = Convert.ToInt32(txtValueMax.Text.Trim());
+                string query = "Select * from tblStorage Where kaina >= '" + Min + "' and kaina <= '" + Max + "'";
+                showData(query, Cnst.SqlCon);
+            }
+            else
+            {
+                MessageBox.Show("Neivestas kainos parametras");
+            }
+        }
+        //-----------------------------------------------------------
+        private void btnDropList_Click(object sender, EventArgs e)
+        {
             DropList dl = dropParameter.SelectedItem as DropList;
             MessageBox.Show(dl.Name);
             string query = "Select * from tblStorage Where tipas = '" + dl.Name + "'";
             showData(query, Cnst.SqlCon);
         }
-        //-----------------------------------------------------------
-        private void btnDropList_Click(object sender, EventArgs e)
-        {
-            int Min = Convert.ToInt32(txtValueMin.Text.Trim());
-            int Max = Convert.ToInt32(txtValueMax.Text.Trim());
-            string query = "Select * from tblStorage Where kaina >= '" + Min + "' and kaina <= '" + Max + "'";
-            showData(query, Cnst.SqlCon);
-        }
-        
 
+        private void FormStorage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Cnst.ExitApp();
+        }
     }
 }
