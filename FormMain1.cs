@@ -34,5 +34,12 @@ namespace SandelioSistema
             Hide();
             redirect.Show();
         }
+
+        private void BtnPrideti_Click(object sender, EventArgs e)
+        {
+            var redirect = new FormAddItem();
+            Hide();
+            redirect.Show();
+        }
     }
 }

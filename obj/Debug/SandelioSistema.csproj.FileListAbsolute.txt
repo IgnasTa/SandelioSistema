@@ -14,3 +14,4 @@ D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSist
 D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.FormMain1.resources
 D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.FormMain2.resources
 D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.FormStorage.resources
+D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.FormAddItem.resources
