@@ -15,3 +15,24 @@ D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSist
 D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.FormMain2.resources
 D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.FormStorage.resources
 D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.FormAddItem.resources
+D:\SandelioSistema\bin\Debug\SandelioDB.mdf
+D:\SandelioSistema\bin\Debug\SandelioDB_log.ldf
+D:\SandelioSistema\bin\Debug\SandelioSistema.exe.config
+D:\SandelioSistema\bin\Debug\SandelioSistema.exe
+D:\SandelioSistema\bin\Debug\SandelioSistema.pdb
+D:\SandelioSistema\obj\Debug\SandelioSistema.csprojResolveAssemblyReference.cache
+D:\SandelioSistema\obj\Debug\SandelioSistema.FormAddItem.resources
+D:\SandelioSistema\obj\Debug\SandelioSistema.FormLogIn.resources
+D:\SandelioSistema\obj\Debug\SandelioSistema.FormMain0.resources
+D:\SandelioSistema\obj\Debug\SandelioSistema.FormMain1.resources
+D:\SandelioSistema\obj\Debug\SandelioSistema.FormMain2.resources
+D:\SandelioSistema\obj\Debug\SandelioSistema.FormSell.resources
+D:\SandelioSistema\obj\Debug\SandelioSistema.FormSignIn.resources
+D:\SandelioSistema\obj\Debug\SandelioSistema.FormStorage.resources
+D:\SandelioSistema\obj\Debug\SandelioSistema.Properties.Resources.resources
+D:\SandelioSistema\obj\Debug\SandelioSistema.csproj.GenerateResource.cache
+D:\SandelioSistema\obj\Debug\SandelioSistema.csproj.CoreCompileInputs.cache
+D:\SandelioSistema\obj\Debug\SandelioSistema.exe
+D:\SandelioSistema\obj\Debug\SandelioSistema.pdb
+D:\SandelioSistema\obj\Debug\SandelioSistema.FormLog.resources
+D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.FormLog.resources

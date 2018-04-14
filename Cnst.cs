@@ -29,15 +29,14 @@ namespace SandelioSistema
         public static string ToMd5(string input)
 
         {
-            MD5 md5 = System.Security.Cryptography.MD5.Create();
-            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+            MD5 md5 = MD5.Create();
+            byte[] inputBytes = Encoding.ASCII.GetBytes(input);
             byte[] hash = md5.ComputeHash(inputBytes);
 
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < hash.Length; i++)
-            {
                 sb.Append(hash[i].ToString("X2"));
-            }
+            
             return sb.ToString();
         }
 
@@ -45,12 +44,10 @@ namespace SandelioSistema
         {
             if (System.Windows.Forms.Application.MessageLoop)
             {
-                // WinForms app
                 System.Windows.Forms.Application.Exit();
             }
             else
             {
-                // Console app
                 System.Environment.Exit(1);
             }
         }
