@@ -28,6 +28,7 @@ namespace SandelioSistema
             myCommand.Parameters.AddWithValue("@kaina", txtKaina.Text);
             myCommand.Parameters.AddWithValue("@tipas", tipas.Name);
             myCommand.ExecuteNonQuery();
+            Cnst.SqlCon.Close();
             MessageBox.Show("Priregistruota preke");
         }
 
@@ -82,6 +83,7 @@ namespace SandelioSistema
             myCommand.Parameters.AddWithValue("@pavadinimas", pavadinimas.Name);
             myCommand.Parameters.AddWithValue("@kiekis", likutis);
             myCommand.ExecuteNonQuery();
+            Cnst.SqlCon.Close();
             MessageBox.Show("Likutis Atnaujintas");
         }
 

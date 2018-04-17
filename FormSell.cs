@@ -62,6 +62,7 @@ namespace SandelioSistema
                            dtbl.Rows[i][2] + " €"),
                     Name = dtbl.Rows[i][0].ToString()
                 });
+
             }
             comboBox1.DataSource = dropPavadinimas;
             comboBox1.DisplayMember = "Title";
@@ -71,10 +72,10 @@ namespace SandelioSistema
         {
             DropList pavDropList = comboBox1.SelectedItem as DropList;
             DropList nuolaidaDropList = comboBox2.SelectedItem as DropList;
-            kiekis = Convert.ToInt32(txtKiekis.Text);                           // kiekis - kiekis nupirktu prekiu
-            nuolaida = nuolaidaDropList.DoubleValue;                            // nuolaida - pritaikyta nuolaida (%)
-            price = pavDropList.DoubleValue * kiekis * (1 - nuolaida);          // price - kaina viso pirkinio
-            double akcija = pavDropList.DoubleValue * kiekis * nuolaida;        // akcija - visos nuolaidos suma
+            kiekis = Convert.ToInt32(txtKiekis.Text);                                         // kiekis - kiekis nupirktu prekiu
+            nuolaida = nuolaidaDropList.DoubleValue;                                          // nuolaida - pritaikyta nuolaida (%)
+            price = Math.Round(pavDropList.DoubleValue * kiekis * (1 - nuolaida), 2) ;        // price - kaina viso pirkinio
+            double akcija = Math.Round(pavDropList.DoubleValue * kiekis * nuolaida, 2);       // akcija - visos nuolaidos suma
             txtKaina.Text = price.ToString();
             label5.Text = "Suteikta nuolaida: " + akcija;
 
