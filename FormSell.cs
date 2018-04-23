@@ -100,8 +100,8 @@ namespace SandelioSistema
                            dtbl.Rows[i][2] + " €"),
                     Name = dtbl.Rows[i][0].ToString()
                 });
-
             }
+
             comboBox1.DataSource = dropPavadinimas;
             comboBox1.DisplayMember = "Title";
         }
@@ -127,7 +127,6 @@ namespace SandelioSistema
             conn.Fill(dtbl1);
             ShoppingCart[nr].PrekesId = Convert.ToInt32(dtbl1.Rows[0][0]);       // PrekesId - parduotos prekes ID   
             ShoppingCart[nr].PradinisKiekis = Convert.ToInt32(dtbl1.Rows[0][1]); // PradinisKiekis - parduotos prekes likutis pries pardavima
-            ShoppingCart[nr].Likutis = ShoppingCart[nr].PradinisKiekis - ShoppingCart[nr].Kiekis;       // Likutis - parduotos prekes likutis po sanderio
 
             if (ShoppingCart[nr].Likutis < 0)
             {
@@ -139,10 +138,7 @@ namespace SandelioSistema
                 sortCart();
                 listViewCart();
                 nr++;
-            }
-            
-
-
+            }      
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -150,12 +146,15 @@ namespace SandelioSistema
             Cnst.SqlCon.Open();
             foreach (var eile in ShoppingCart)
             {
-                string query = "INSERT INTO tblSellLog (prekesId, kiekis, nuolaida, suma) VALUES ('" + eile.PrekesId + "' , '" +
-                               eile.Kiekis + "' , '" + eile.Nuolaida + "' , '" + eile.Kaina + "')" + "Update tblStorage SET kiekis = '" +
-                               eile.Likutis + "' Where prekesId = '" + eile.PrekesId + "'";
-                var myCommand = new SqlCommand(query, Cnst.SqlCon);
-                myCommand.ExecuteNonQuery();
-                listView.Items.Clear();
+                if (eile.Likutis >= 0)
+                { 
+                    string query = "INSERT INTO tblSellLog (prekesId, kiekis, nuolaida, suma) VALUES ('" + eile.PrekesId + "' , '" +
+                                   eile.Kiekis + "' , '" + eile.Nuolaida + "' , '" + eile.Kaina + "')" + "Update tblStorage SET kiekis = '" +
+                                   eile.Likutis + "' Where prekesId = '" + eile.PrekesId + "'";
+                    var myCommand = new SqlCommand(query, Cnst.SqlCon);
+                    myCommand.ExecuteNonQuery();
+                    listView.Items.Clear();
+                }
             }
             Cnst.SqlCon.Close();
 
@@ -196,9 +195,7 @@ namespace SandelioSistema
         {
             Cnst.ExitApp();
         }
-
         
-
         private void Click_clearList(object sender, EventArgs e)
         {
             ShoppingCart.Clear();

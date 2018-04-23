@@ -13,16 +13,20 @@ namespace SandelioSistema
         public int Kiekis { get; set; }
         public double VntKaina { get; set; }
         public double Nuolaida { get; set; }
-        public int Likutis { get; set; }
         public int PradinisKiekis { get; set; }
         public double Kaina
         {
             get
             {
-                double kaina = Kiekis * VntKaina * (1 - Nuolaida);
-                return kaina;
+                return Kiekis * VntKaina * (1 - Nuolaida);
             }
         }
-
+        public int Likutis
+        {
+            get
+            {
+                return PradinisKiekis - Kiekis;
+            }
+        }
     }
 }

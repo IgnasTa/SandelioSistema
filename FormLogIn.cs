@@ -80,5 +80,12 @@ namespace SandelioSistema
         {
             Cnst.ExitApp();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var redirect = new FormLog();
+            Hide();
+            redirect.Show();
+        }
     }
 }
