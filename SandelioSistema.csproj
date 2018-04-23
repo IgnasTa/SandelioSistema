@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cart.cs" />
     <Compile Include="Cnst.cs" />
     <Compile Include="DropList.cs" />
     <Compile Include="FormAddItem.cs">

@@ -41,6 +41,12 @@
             this.txtKaina = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.listView = new System.Windows.Forms.ListView();
+            this.pav = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.kaina = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.kiekis = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Suma = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clearList = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label5
@@ -150,7 +156,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(321, 249);
+            this.button3.Location = new System.Drawing.Point(12, 260);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 23;
@@ -158,11 +164,58 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Return_Click);
             // 
+            // listView
+            // 
+            this.listView.BackColor = System.Drawing.SystemColors.Control;
+            this.listView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.pav,
+            this.kaina,
+            this.kiekis,
+            this.Suma});
+            this.listView.Location = new System.Drawing.Point(359, 12);
+            this.listView.Name = "listView";
+            this.listView.Size = new System.Drawing.Size(323, 221);
+            this.listView.TabIndex = 30;
+            this.listView.UseCompatibleStateImageBehavior = false;
+            this.listView.View = System.Windows.Forms.View.Details;
+            // 
+            // pav
+            // 
+            this.pav.Text = "Pavadinimas";
+            this.pav.Width = 122;
+            // 
+            // kaina
+            // 
+            this.kaina.Text = "Kaina";
+            // 
+            // kiekis
+            // 
+            this.kiekis.Text = "Kiekis";
+            this.kiekis.Width = 67;
+            // 
+            // Suma
+            // 
+            this.Suma.Text = "Suma";
+            this.Suma.Width = 73;
+            // 
+            // clearList
+            // 
+            this.clearList.Location = new System.Drawing.Point(581, 239);
+            this.clearList.Name = "clearList";
+            this.clearList.Size = new System.Drawing.Size(89, 23);
+            this.clearList.TabIndex = 31;
+            this.clearList.Text = "Isvalyti krepseli";
+            this.clearList.UseVisualStyleBackColor = true;
+            this.clearList.Click += new System.EventHandler(this.Click_clearList);
+            // 
             // FormSell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 295);
+            this.ClientSize = new System.Drawing.Size(694, 295);
+            this.Controls.Add(this.clearList);
+            this.Controls.Add(this.listView);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
@@ -200,5 +253,11 @@
         private System.Windows.Forms.TextBox txtKaina;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ListView listView;
+        private System.Windows.Forms.ColumnHeader pav;
+        private System.Windows.Forms.ColumnHeader kaina;
+        private System.Windows.Forms.ColumnHeader kiekis;
+        private System.Windows.Forms.ColumnHeader Suma;
+        private System.Windows.Forms.Button clearList;
     }
 }

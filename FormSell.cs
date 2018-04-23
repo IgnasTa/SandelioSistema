@@ -3,17 +3,16 @@ using System.Drawing;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SandelioSistema
 {
     public partial class FormSell : Form
     {
-        public static int prekesId;
-        public static int kiekis;
-        public static double nuolaida;
-        public static double price;
-        public static int likutis;
+        public int nr = 0;
+        List<Cart> ShoppingCart = new List<Cart>();
 
         public FormSell()
         {
@@ -31,6 +30,44 @@ namespace SandelioSistema
 
             dropTipas.DataSource = Cnst.DropTipai;
             dropTipas.DisplayMember = "Name";
+
+            listView.Hide();
+        }
+
+        void listViewCart()
+        {
+            listView.Items.Clear();
+            listView.Show();
+            foreach (var preke in ShoppingCart)
+            {
+                ListViewItem item = new ListViewItem(preke.Pavadinimas);
+                item.SubItems.Add(preke.VntKaina.ToString());
+                item.SubItems.Add(preke.Kiekis.ToString());
+                item.SubItems.Add(preke.Kaina.ToString());
+                listView.Items.Add(item);
+            }
+        }
+
+        void sortCart()
+        {
+            int cut = 0;
+            ShoppingCart.Sort((x, y) => x.PrekesId.CompareTo(y.PrekesId));
+            for (int i = 0; i < ShoppingCart.Count; i++)
+                for (int j = i + 1; j < ShoppingCart.Count; j++)
+                    if (ShoppingCart[i].PrekesId == ShoppingCart[j].PrekesId)
+                    {
+                        ShoppingCart[i].Kiekis += ShoppingCart[j].Kiekis;
+                        ShoppingCart[j].Kiekis = -1;
+                        cut++;
+                        nr--;
+                    }
+
+            if (cut > 0)
+            {
+                ShoppingCart.Sort((y, x) => x.Kiekis.CompareTo(y.Kiekis));
+                ShoppingCart.RemoveAt(ShoppingCart.Count - cut);
+            }   
+            
         }
 
         private void DropTipas_SelectedIndexChanged(object sender, EventArgs e)
@@ -54,7 +91,8 @@ namespace SandelioSistema
 
             for (int i = 0; i < dtbl.Rows.Count; i++)
             { 
-                dropPavadinimas.Add(new DropList() {
+                dropPavadinimas.Add(new DropList()
+                {
                     DoubleValue = Convert.ToDouble(dtbl.Rows[i][2]),  //kaina produkto
                     Title = String.Format("{0,-15}|{1,-9}|{2,7}",
                            dtbl.Rows[i][0] , 
@@ -72,45 +110,56 @@ namespace SandelioSistema
         {
             DropList pavDropList = comboBox1.SelectedItem as DropList;
             DropList nuolaidaDropList = comboBox2.SelectedItem as DropList;
-            kiekis = Convert.ToInt32(txtKiekis.Text);                                         // kiekis - kiekis nupirktu prekiu
-            nuolaida = nuolaidaDropList.DoubleValue;                                          // nuolaida - pritaikyta nuolaida (%)
-            price = Math.Round(pavDropList.DoubleValue * kiekis * (1 - nuolaida), 2) ;        // price - kaina viso pirkinio
-            double akcija = Math.Round(pavDropList.DoubleValue * kiekis * nuolaida, 2);       // akcija - visos nuolaidos suma
-            txtKaina.Text = price.ToString();
+
+            ShoppingCart.Add(new Cart());
+            ShoppingCart[nr].Pavadinimas = pavDropList.Name;
+            ShoppingCart[nr].Kiekis = Convert.ToInt32(txtKiekis.Text);           // Kiekis - kiekis nupirktu prekiu
+            ShoppingCart[nr].VntKaina = pavDropList.DoubleValue;                 // VntKaina - kaina vieno vieneto
+            ShoppingCart[nr].Nuolaida = nuolaidaDropList.DoubleValue;            // Nuolaida - pritaikyta nuolaida (%)
+
+            double akcija = Math.Round(pavDropList.DoubleValue * ShoppingCart[nr].Kiekis * ShoppingCart[nr].Nuolaida, 2);       // akcija - visos nuolaidos suma
+            txtKaina.Text = ShoppingCart[nr].Kaina.ToString();
             label5.Text = "Suteikta nuolaida: " + akcija;
-
+            
             string query = "Select prekesId, kiekis from tblStorage Where pavadinimas = '" + pavDropList.Name + "'";
-
             SqlDataAdapter conn = new SqlDataAdapter(query, Cnst.SqlCon);
             DataTable dtbl1 = new DataTable();
             conn.Fill(dtbl1);
+            ShoppingCart[nr].PrekesId = Convert.ToInt32(dtbl1.Rows[0][0]);       // PrekesId - parduotos prekes ID   
+            ShoppingCart[nr].PradinisKiekis = Convert.ToInt32(dtbl1.Rows[0][1]); // PradinisKiekis - parduotos prekes likutis pries pardavima
+            ShoppingCart[nr].Likutis = ShoppingCart[nr].PradinisKiekis - ShoppingCart[nr].Kiekis;       // Likutis - parduotos prekes likutis po sanderio
 
-            prekesId = Convert.ToInt32(dtbl1.Rows[0][0]);                       // prekesId - parduotos prekes ID
-            int kiekisId = Convert.ToInt32(dtbl1.Rows[0][1]);                   // kiekisId - parduotos prekes likutis pries pardavima
-            likutis = kiekisId - kiekis;                                        // likutis - parduotos prekes likutis po sanderio
-            if (likutis < 0)
-                MessageBox.Show("Likutis nepakankamas");
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            if (likutis >= 0)
+            if (ShoppingCart[nr].Likutis < 0)
             {
-                string query = "INSERT INTO tblSellLog (prekesId, kiekis, nuolaida, suma) VALUES ('" + prekesId + "' , '" +
-                               kiekis + "' , '" + nuolaida + "' , '" + price + "')" + "Update tblStorage SET kiekis = '" +
-                               likutis + "' Where prekesId = '" + prekesId + "'";
-
-                Cnst.SqlCon.Open();
-                var myCommand = new SqlCommand(query, Cnst.SqlCon);
-                myCommand.ExecuteNonQuery();
-                Cnst.SqlCon.Close();
-
-                MessageBox.Show("Uzsakymas ivykdytas");
+                MessageBox.Show("Likutis nepakankamas");
+                ShoppingCart.RemoveAt(ShoppingCart.Count - 1);
             }
             else
             {
-                MessageBox.Show("Likutis nepakankamas");
+                sortCart();
+                listViewCart();
+                nr++;
             }
+            
+
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        { 
+            Cnst.SqlCon.Open();
+            foreach (var eile in ShoppingCart)
+            {
+                string query = "INSERT INTO tblSellLog (prekesId, kiekis, nuolaida, suma) VALUES ('" + eile.PrekesId + "' , '" +
+                               eile.Kiekis + "' , '" + eile.Nuolaida + "' , '" + eile.Kaina + "')" + "Update tblStorage SET kiekis = '" +
+                               eile.Likutis + "' Where prekesId = '" + eile.PrekesId + "'";
+                var myCommand = new SqlCommand(query, Cnst.SqlCon);
+                myCommand.ExecuteNonQuery();
+                listView.Items.Clear();
+            }
+            Cnst.SqlCon.Close();
+
+            ShoppingCart.Clear();
         }
 
         private void Return_Click(object sender, EventArgs e)
@@ -146,6 +195,17 @@ namespace SandelioSistema
         private void FormSell_FormClosing(object sender, FormClosingEventArgs e)
         {
             Cnst.ExitApp();
+        }
+
+        
+
+        private void Click_clearList(object sender, EventArgs e)
+        {
+            ShoppingCart.Clear();
+            listViewCart();
+            nr = 0;
+            MessageBox.Show("Krepšelis išvalytas");
+            listView.Hide();
         }
     }
 }
