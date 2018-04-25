@@ -2,19 +2,11 @@ D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\bin\Debug\SandelioSist
 D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\bin\Debug\SandelioSistema.exe
 D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\bin\Debug\SandelioSistema.pdb
 D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.csprojResolveAssemblyReference.cache
-D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.FormLogIn.resources
-D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.FormSignIn.resources
 D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.Properties.Resources.resources
 D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.csproj.GenerateResource.cache
 D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.csproj.CoreCompileInputs.cache
 D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.exe
 D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.pdb
-D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.FormSell.resources
-D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.FormMain0.resources
-D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.FormMain1.resources
-D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.FormMain2.resources
-D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.FormStorage.resources
-D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.FormAddItem.resources
 D:\SandelioSistema\bin\Debug\SandelioDB.mdf
 D:\SandelioSistema\bin\Debug\SandelioDB_log.ldf
 D:\SandelioSistema\bin\Debug\SandelioSistema.exe.config
@@ -35,4 +27,14 @@ D:\SandelioSistema\obj\Debug\SandelioSistema.csproj.CoreCompileInputs.cache
 D:\SandelioSistema\obj\Debug\SandelioSistema.exe
 D:\SandelioSistema\obj\Debug\SandelioSistema.pdb
 D:\SandelioSistema\obj\Debug\SandelioSistema.FormLog.resources
-D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.FormLog.resources
+D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.VartotojuRedagavimas.resources
+D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.PridetiPrekes.resources
+D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.IstrintiPrekes.resources
+D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.PardavimuAtaskaita.resources
+D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.Prisijungimas.resources
+D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.PardavejoMeniu.resources
+D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.SandelininkoMeniu.resources
+D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.AdministratoriausMeniu.resources
+D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.Pardavimas.resources
+D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.Registracija.resources
+D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\obj\Debug\SandelioSistema.Sandelys.resources

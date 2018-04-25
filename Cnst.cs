@@ -7,27 +7,34 @@ namespace SandelioSistema
 {
     class Cnst
     {
-        public static int alevel = 0;
-        
+        public static int alevel = -1;
+
+        public static string User;
+
         public static SqlConnection SqlCon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Igno dokumentai\Programavimas\Programs\SandelioSistema\Database SQL\SandelioDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         public static List<DropList> DropTipai = new List<DropList>
         {
             new DropList() {Name = " "},
-            new DropList() {Name = "Maistas"},
-            new DropList() {Name = "Chemija"},
-            new DropList() {Name = "Elektronika"}
+            new DropList() {Name = "Vaizdo plokštės"},
+            new DropList() {Name = "Procesoriai"},
+            new DropList() {Name = "Pagrindinės plokštės"},
+            new DropList() {Name = "Aušintuvai"},
+            new DropList() {Name = "Operatyvinė atmintis"},
+            new DropList() {Name = "Garso Plokštės"},
+            new DropList() {Name = "Maitinimo blokai"},
+            new DropList() {Name = "Vidiniai duomenų kaupikliai (HDD, SSD)"}
+
         };
 
         public static List<DropList> DropAutorizacija = new List<DropList>
         {
-            new DropList() {Value = 0, Name = "Sandelininkas"},
-            new DropList() {Value = 1, Name = "Pardavejas"},
+            new DropList() {Value = 0, Name = "Pardavėjas"},
+            new DropList() {Value = 1, Name = "Sandėlinikas"},
             new DropList() {Value = 2, Name = "Administratorius"}
         };
 
         public static string ToMd5(string input)
-
         {
             MD5 md5 = MD5.Create();
             byte[] inputBytes = Encoding.ASCII.GetBytes(input);
@@ -50,7 +57,6 @@ namespace SandelioSistema
             {
                 System.Environment.Exit(1);
             }
-        }
-       
+        }       
     }
 }

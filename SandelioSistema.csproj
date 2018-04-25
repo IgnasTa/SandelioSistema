@@ -63,88 +63,106 @@
     <Compile Include="Cart.cs" />
     <Compile Include="Cnst.cs" />
     <Compile Include="DropList.cs" />
-    <Compile Include="FormAddItem.cs">
+    <Compile Include="VartotojuRedagavimas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAddItem.Designer.cs">
-      <DependentUpon>FormAddItem.cs</DependentUpon>
+    <Compile Include="VartotojuRedagavimas.Designer.cs">
+      <DependentUpon>VartotojuRedagavimas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLog.cs">
+    <Compile Include="PridetiPrekes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLog.Designer.cs">
-      <DependentUpon>FormLog.cs</DependentUpon>
+    <Compile Include="PridetiPrekes.Designer.cs">
+      <DependentUpon>PridetiPrekes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLogIn.cs">
+    <Compile Include="IstrintiPrekes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogIn.Designer.cs">
-      <DependentUpon>FormLogIn.cs</DependentUpon>
+    <Compile Include="IstrintiPrekes.Designer.cs">
+      <DependentUpon>IstrintiPrekes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMain0.cs">
+    <Compile Include="PardavimuAtaskaita.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain0.Designer.cs">
-      <DependentUpon>FormMain0.cs</DependentUpon>
+    <Compile Include="PardavimuAtaskaita.Designer.cs">
+      <DependentUpon>PardavimuAtaskaita.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMain1.cs">
+    <Compile Include="Prisijungimas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain1.Designer.cs">
-      <DependentUpon>FormMain1.cs</DependentUpon>
+    <Compile Include="Prisijungimas.Designer.cs">
+      <DependentUpon>Prisijungimas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMain2.cs">
+    <Compile Include="PardavejoMeniu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain2.Designer.cs">
-      <DependentUpon>FormMain2.cs</DependentUpon>
+    <Compile Include="PardavejoMeniu.Designer.cs">
+      <DependentUpon>PardavejoMeniu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSell.cs">
+    <Compile Include="SandelininkoMeniu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSell.Designer.cs">
-      <DependentUpon>FormSell.cs</DependentUpon>
+    <Compile Include="SandelininkoMeniu.Designer.cs">
+      <DependentUpon>SandelininkoMeniu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSignIn.cs">
+    <Compile Include="AdministratoriausMeniu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSignIn.Designer.cs">
-      <DependentUpon>FormSignIn.cs</DependentUpon>
+    <Compile Include="AdministratoriausMeniu.Designer.cs">
+      <DependentUpon>AdministratoriausMeniu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormStorage.cs">
+    <Compile Include="Pardavimas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormStorage.Designer.cs">
-      <DependentUpon>FormStorage.cs</DependentUpon>
+    <Compile Include="Pardavimas.Designer.cs">
+      <DependentUpon>Pardavimas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registracija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registracija.Designer.cs">
+      <DependentUpon>Registracija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sandelys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sandelys.Designer.cs">
+      <DependentUpon>Sandelys.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormAddItem.resx">
-      <DependentUpon>FormAddItem.cs</DependentUpon>
+    <EmbeddedResource Include="VartotojuRedagavimas.resx">
+      <DependentUpon>VartotojuRedagavimas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLog.resx">
-      <DependentUpon>FormLog.cs</DependentUpon>
+    <EmbeddedResource Include="PridetiPrekes.resx">
+      <DependentUpon>PridetiPrekes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogIn.resx">
-      <DependentUpon>FormLogIn.cs</DependentUpon>
+    <EmbeddedResource Include="IstrintiPrekes.resx">
+      <DependentUpon>IstrintiPrekes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMain0.resx">
-      <DependentUpon>FormMain0.cs</DependentUpon>
+    <EmbeddedResource Include="PardavimuAtaskaita.resx">
+      <DependentUpon>PardavimuAtaskaita.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMain1.resx">
-      <DependentUpon>FormMain1.cs</DependentUpon>
+    <EmbeddedResource Include="Prisijungimas.resx">
+      <DependentUpon>Prisijungimas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMain2.resx">
-      <DependentUpon>FormMain2.cs</DependentUpon>
+    <EmbeddedResource Include="PardavejoMeniu.resx">
+      <DependentUpon>PardavejoMeniu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSell.resx">
-      <DependentUpon>FormSell.cs</DependentUpon>
+    <EmbeddedResource Include="SandelininkoMeniu.resx">
+      <DependentUpon>SandelininkoMeniu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSignIn.resx">
-      <DependentUpon>FormSignIn.cs</DependentUpon>
+    <EmbeddedResource Include="AdministratoriausMeniu.resx">
+      <DependentUpon>AdministratoriausMeniu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormStorage.resx">
-      <DependentUpon>FormStorage.cs</DependentUpon>
+    <EmbeddedResource Include="Pardavimas.resx">
+      <DependentUpon>Pardavimas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registracija.resx">
+      <DependentUpon>Registracija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sandelys.resx">
+      <DependentUpon>Sandelys.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -154,6 +172,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -179,6 +198,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="37171-question-mark-in-a-circle-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="help.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

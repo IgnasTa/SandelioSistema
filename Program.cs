@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SandelioSistema
@@ -16,7 +13,7 @@ namespace SandelioSistema
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogIn());
+            Application.Run(new Prisijungimas());
         }
     }
 }
