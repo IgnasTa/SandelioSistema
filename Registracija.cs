@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -23,24 +24,35 @@ namespace SandelioSistema
 
         private void CreateAccount_Click(object sender, EventArgs e)
         {
-            DropList level = comboBox1.SelectedItem as DropList;
-            string pass = txtSignInPassword.Text.Trim();
-            string hashPass = Cnst.ToMd5(pass);
-            int authorization = Convert.ToInt32(level.Value);
-            if (c)
+            var query = "Select * from tblLogin Where username = '" + txtSignInName.Text.Trim() + "'";
+            var con = new SqlDataAdapter(query, Cnst.SqlCon);
+            var check = new DataTable();
+            con.Fill(check);
+            if (check.Rows.Count == 0)
             {
-                Cnst.SqlCon.Open();
-                string query = "INSERT INTO tblLogin (username, password, level) VALUES (@username, @password , @level)";
-                SqlCommand myCommand = new SqlCommand(query, Cnst.SqlCon);
-                myCommand.Parameters.AddWithValue("@username", txtSignInName.Text);
-                myCommand.Parameters.AddWithValue("@password", hashPass);
-                myCommand.Parameters.AddWithValue("@level", authorization);
-                myCommand.ExecuteNonQuery();
-                Cnst.SqlCon.Close();
-                Prisijungimas redirect = new Prisijungimas();
-                this.Hide();
-                redirect.Show();
-                MessageBox.Show("Priregistruota");
+                MessageBox.Show("Vartotojas tokiu prisijungimo vardu jau yra");
+            }
+            else
+            {
+                DropList level = comboBox1.SelectedItem as DropList;
+                string pass = txtSignInPassword.Text.Trim();
+                string hashPass = Cnst.ToMd5(pass);
+                int authorization = Convert.ToInt32(level.Value);
+                if (c)
+                {
+                    Cnst.SqlCon.Open();
+                    query = "INSERT INTO tblLogin (username, password, level) VALUES (@username, @password , @level)";
+                    SqlCommand myCommand = new SqlCommand(query, Cnst.SqlCon);
+                    myCommand.Parameters.AddWithValue("@username", txtSignInName.Text);
+                    myCommand.Parameters.AddWithValue("@password", hashPass);
+                    myCommand.Parameters.AddWithValue("@level", authorization);
+                    myCommand.ExecuteNonQuery();
+                    Cnst.SqlCon.Close();
+                    Prisijungimas redirect = new Prisijungimas();
+                    this.Hide();
+                    redirect.Show();
+                    MessageBox.Show("Priregistruota");
+                }
             }
         }
 
