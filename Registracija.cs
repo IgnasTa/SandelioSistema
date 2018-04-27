@@ -28,7 +28,7 @@ namespace SandelioSistema
             var con = new SqlDataAdapter(query, Cnst.SqlCon);
             var check = new DataTable();
             con.Fill(check);
-            if (check.Rows.Count == 0)
+            if (check.Rows.Count > 0)
             {
                 MessageBox.Show("Vartotojas tokiu prisijungimo vardu jau yra");
             }
